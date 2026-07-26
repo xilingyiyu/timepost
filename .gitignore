@@ -1,0 +1,8 @@
+.env
+storage/timepost.db
+storage/timepost.db-wal
+storage/timepost.db-shm
+storage/backups/
+storage/logs/
+storage/uploads/
+public/uploads

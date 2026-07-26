@@ -1,0 +1,277 @@
+/* 后台管理样式 */
+:root {
+    --admin-sidebar-w: 220px;
+    --admin-bg: #F5F7FA;
+}
+body { background: var(--admin-bg); }
+
+.admin-layout { display: flex; min-height: 100vh; }
+
+/* 侧边栏 */
+.admin-sidebar {
+    width: var(--admin-sidebar-w);
+    background: linear-gradient(180deg, #1F1F2E 0%, #2D2D44 100%);
+    color: rgba(255,255,255,0.7);
+    padding: 20px 0;
+    position: fixed; top:0; bottom:0; left:0;
+    overflow-y: auto;
+}
+.sidebar-logo {
+    padding: 0 20px 20px; font-size: 18px; font-weight: 700; color: #fff;
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 12px;
+}
+.sidebar-logo .ic { font-size: 24px; display: flex; align-items: center; }
+.sidebar-logo .ic svg { width: 24px; height: 24px; display: block; }
+.sidebar-menu { list-style: none; padding: 0; }
+.sidebar-menu li a {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 20px; color: rgba(255,255,255,0.7);
+    font-size: 14px; transition: all .2s;
+}
+.sidebar-menu li a:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.sidebar-menu li a.active { background: var(--primary); color: #fff; }
+.sidebar-menu .ic { font-size: 18px; display: flex; align-items: center; }
+.sidebar-menu .ic svg { width: 18px; height: 18px; display: block; }
+
+/* 主区 */
+.admin-main {
+    margin-left: var(--admin-sidebar-w);
+    flex: 1; min-width: 0;
+}
+.admin-header {
+    background: #fff; padding: 16px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 10;
+}
+.admin-header h1 { font-size: 20px; font-weight: 700; }
+.admin-user { font-size: 13px; color: var(--text-secondary); }
+.admin-user a { color: var(--primary); }
+
+.admin-content { padding: 24px 32px; }
+
+/* 统计卡片 */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px; margin-bottom: 24px;
+}
+.stat-card {
+    background: #fff; padding: 20px; border-radius: var(--radius);
+    box-shadow: var(--shadow-sm); border-left: 4px solid;
+    transition: var(--transition);
+}
+.stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.stat-num { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
+.stat-label { font-size: 13px; color: var(--text-secondary); }
+.stat-blue { border-color: #3498db; } .stat-blue .stat-num { color: #3498db; }
+.stat-orange { border-color: #f39c12; } .stat-orange .stat-num { color: #f39c12; }
+.stat-green { border-color: #27ae60; } .stat-green .stat-num { color: #27ae60; }
+.stat-red { border-color: #e74c3c; } .stat-red .stat-num { color: #e74c3c; }
+.stat-purple { border-color: #9b59b6; } .stat-purple .stat-num { color: #9b59b6; }
+.stat-cyan { border-color: #1abc9c; } .stat-cyan .stat-num { color: #1abc9c; }
+.stat-pink { border-color: #e84393; } .stat-pink .stat-num { color: #e84393; }
+.stat-gray { border-color: #636e72; } .stat-gray .stat-num { color: #636e72; }
+
+/* 卡片 */
+.card {
+    background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm);
+    padding: 20px 24px; margin-bottom: 20px;
+}
+.card h3 { font-size: 15px; font-weight: 700; margin: 0 0 16px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.card-header h3 { margin: 0; }
+.btn-link { color: var(--primary); font-size: 13px; }
+
+/* 趋势图 */
+.trend-chart {
+    display: flex; gap: 12px; align-items: flex-end; height: 180px; padding: 12px 0;
+}
+.trend-bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; }
+.trend-bar .bar {
+    width: 100%; max-width: 50px; background: linear-gradient(180deg, var(--primary), var(--accent));
+    border-radius: 6px 6px 0 0; min-height: 4px; transition: all .3s;
+}
+.trend-bar .bar:hover { opacity: 0.8; }
+.trend-bar .bar-label { font-size: 13px; font-weight: 600; }
+.trend-bar .bar-date { font-size: 11px; color: var(--text-light); }
+
+/* 表格 */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th { text-align: left; padding: 12px 8px; color: var(--text-secondary); font-weight: 600; border-bottom: 2px solid var(--border); }
+.table td { padding: 12px 8px; border-bottom: 1px solid var(--border); }
+.table tr:hover { background: var(--bg); }
+.table .empty { text-align: center; color: var(--text-light); padding: 40px 0; }
+
+/* 徽章 */
+.badge { padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.badge-gray { background: #ecf0f1; color: #636e72; }
+.badge-green { background: #d4edda; color: #155724; }
+.badge-red { background: #f8d7da; color: #721c24; }
+.badge-orange { background: #fff3cd; color: #856404; }
+.badge-blue { background: #d1ecf1; color: #0c5460; }
+
+/* 筛选 */
+.filter-bar { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+.filter-bar input, .filter-bar select {
+    padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+    font-size: 14px; min-width: 160px;
+}
+.filter-bar input:focus, .filter-bar select:focus { outline: none; border-color: var(--primary); }
+.btn-search {
+    padding: 8px 16px; background: var(--primary); color: #fff; border-radius: var(--radius-sm);
+    cursor: pointer; font-size: 14px; border: none;
+}
+.btn-search:hover { background: var(--primary-dark); }
+.btn-action {
+    padding: 4px 10px; border-radius: var(--radius-sm); font-size: 12px;
+    cursor: pointer; border: 1px solid var(--border); background: #fff; margin-right: 4px;
+}
+.btn-action:hover { background: var(--bg); }
+.btn-action.danger { color: var(--primary); border-color: var(--primary); }
+.btn-action.danger:hover { background: var(--primary-light); }
+
+/* 分页 */
+.pagination { display: flex; gap: 6px; justify-content: center; margin-top: 20px; }
+.pagination button {
+    min-width: 32px; height: 32px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border); background: #fff; cursor: pointer;
+    font-size: 13px; padding: 0 8px;
+}
+.pagination button:hover:not(:disabled) { background: var(--primary-light); color: var(--primary); }
+.pagination button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.pagination button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* 详情抽屉 */
+.drawer-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1000;
+    display: none; align-items: flex-start; justify-content: flex-end;
+}
+.drawer-overlay.show { display: flex; }
+.drawer {
+    background: #fff; width: 100%; max-width: 540px; height: 100vh;
+    overflow-y: auto; padding: 28px; animation: slideIn .3s ease;
+}
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+.drawer-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.drawer-header h2 { font-size: 18px; }
+.drawer-close { font-size: 24px; cursor: pointer; color: var(--text-light); background: none; border: none; }
+.detail-row { display: flex; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.detail-row .label { width: 110px; color: var(--text-secondary); font-size: 13px; flex-shrink: 0; }
+.detail-row .value { flex: 1; font-size: 14px; word-break: break-all; }
+
+/* 配置表单 */
+.form-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.form-row label { width: 140px; font-size: 14px; color: var(--text-secondary); flex-shrink: 0; }
+.form-row input, .form-row textarea {
+    flex: 1; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+    font-size: 14px;
+}
+.form-row textarea { min-height: 80px; resize: vertical; }
+.btn-save {
+    padding: 10px 24px; background: var(--primary); color: #fff; border: none;
+    border-radius: var(--radius); font-weight: 600; cursor: pointer; margin-top: 12px;
+}
+.btn-save:hover { background: var(--primary-dark); }
+.btn-save:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-cancel {
+    padding: 10px 24px; background: var(--bg-soft); color: var(--text-secondary);
+    border: 1px solid var(--border); border-radius: var(--radius); font-weight: 600; cursor: pointer;
+}
+.btn-cancel:hover { background: var(--border-soft); }
+
+/* ============ 模态框 ============ */
+.modal-mask {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center; padding: 20px;
+    animation: modalFadeIn .2s ease;
+}
+@keyframes modalFadeIn { from { opacity:0; } to { opacity:1; } }
+.modal-box {
+    background: #fff; border-radius: var(--radius-lg);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+    width: 100%; max-width: 460px; overflow: hidden;
+    animation: modalSlideIn .25s cubic-bezier(.4,0,.2,1);
+}
+@keyframes modalSlideIn { from { transform: translateY(20px); opacity:0; } to { transform: translateY(0); opacity:1; } }
+.modal-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 24px; border-bottom: 1px solid var(--border-soft);
+}
+.modal-header h3 { font-size: 17px; font-weight: 700; margin: 0; color: var(--text); }
+.modal-close {
+    width: 32px; height: 32px; border: none; background: transparent;
+    border-radius: 50%; font-size: 22px; color: var(--text-light); cursor: pointer;
+    display: flex; align-items: center; justify-content: center; line-height: 1;
+}
+.modal-close:hover { background: var(--bg-soft); color: var(--text); }
+.modal-body { padding: 24px; }
+.modal-footer {
+    display: flex; justify-content: flex-end; gap: 10px;
+    padding: 16px 24px; border-top: 1px solid var(--border-soft); background: var(--bg-soft);
+}
+.modal-body .form-row { margin-bottom: 16px; }
+.modal-body .form-row:last-child { margin-bottom: 0; }
+
+/* ============ 移动端 ============ */
+/* 汉堡按钮（由 admin.js 注入到 admin-header） */
+.admin-toggle {
+    display: none; width: 40px; height: 40px; border: none; background: transparent;
+    cursor: pointer; padding: 8px; border-radius: var(--radius-sm);
+    flex-direction: column; justify-content: center; align-items: center; gap: 5px;
+    margin-right: 8px; flex-shrink: 0;
+}
+.admin-toggle span {
+    display: block; width: 20px; height: 2px; background: var(--text);
+    border-radius: 2px; transition: all .25s ease;
+}
+.admin-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.admin-toggle.active span:nth-child(2) { opacity: 0; }
+.admin-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* 侧边栏遮罩 */
+.admin-backdrop {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4);
+    z-index: 40;
+}
+.admin-backdrop.show { display: block; }
+
+/* 表格滚动容器 */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-wrap .table { min-width: 560px; }
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        transform: translateX(-100%); transition: transform .3s ease;
+        z-index: 50; box-shadow: 0 0 40px rgba(0,0,0,0.2);
+    }
+    .admin-sidebar.show { transform: translateX(0); }
+    .admin-main { margin-left: 0; }
+    .admin-toggle { display: flex; }
+    .admin-header { padding: 12px 16px; }
+    .admin-header h1 { font-size: 17px; }
+    .admin-content { padding: 16px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .stat-card { padding: 16px; }
+    .stat-num { font-size: 22px; }
+    .card { padding: 16px; }
+    /* form-row 纵向布局 */
+    .form-row { flex-direction: column; align-items: stretch; gap: 6px; }
+    .form-row label { width: auto; }
+    /* 筛选栏纵向 */
+    .filter-bar { flex-direction: column; align-items: stretch; }
+    .filter-bar input, .filter-bar select { min-width: 0; width: 100%; }
+    /* 触摸目标放大 */
+    .pagination button { min-width: 40px; height: 40px; }
+    .btn-action { padding: 8px 12px; }
+    .sidebar-menu li a { padding: 14px 20px; }
+    .drawer { max-width: 100%; padding: 20px; }
+}
+@media (max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .admin-content { padding: 12px; }
+    .admin-header { padding: 10px 12px; }
+    .admin-header h1 { font-size: 15px; }
+    .admin-user { font-size: 12px; }
+    .trend-chart { height: 140px; gap: 6px; }
+}
