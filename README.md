@@ -2,6 +2,8 @@
 
 写信给未来，让时光替你说话。
 
+![首页截图](public/assets/img/screenshot.png)
+
 ## 功能
 
 - 设定未来时间，通过短信/邮件定时投递
