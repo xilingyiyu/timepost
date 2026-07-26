@@ -2,7 +2,12 @@
 
 写信给未来，让时光替你说话。
 
-![首页截图](public/assets/img/screenshot.png)
+<table>
+  <tr>
+    <td><img src="public/assets/img/screenshot.png" alt="首页截图" width="100%"></td>
+    <td><img src="public/assets/img/screenshot-write.png" alt="写信界面" width="100%"></td>
+  </tr>
+</table>
 
 ## 功能
 
