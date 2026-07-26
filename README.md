@@ -4,9 +4,12 @@
 
 <table>
   <tr>
-    <td width="33%"><img src="public/assets/img/screenshot.png" alt="首页截图"></td>
-    <td width="33%"><img src="public/assets/img/screenshot-write.png" alt="写信界面"></td>
-    <td width="33%"><img src="public/assets/img/screenshot-steps.png" alt="三步发送流程"></td>
+    <td width="50%"><img src="public/assets/img/screenshot.png" alt="首页截图"></td>
+    <td width="50%"><img src="public/assets/img/screenshot-write.png" alt="写信界面"></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="public/assets/img/screenshot-steps.png" alt="三步发送流程"></td>
+    <td width="50%"><img src="public/assets/img/screenshot-templates.png" alt="10 种内置模板"></td>
   </tr>
 </table>
 
